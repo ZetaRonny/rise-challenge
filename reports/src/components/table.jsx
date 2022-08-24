@@ -3,17 +3,15 @@ import JsonData from './data.json' // static file data
  function Table({data}){
     let rows = cleanData(data.body);
     const table=rows.map(
-        (row)=>{
+        (row, index)=>{
             return(
-                <div className='Table-Wrapper'>
                 <div className='Grid-Data-Row'>
-                    <div className='Demographic'>{row.title}</div>
-                    <div>{row.onTrackRate.Q1}%</div>
-                    <div>{row.onTrackRate.Q2}%</div>
-                    <div>{row.onTrackRate.Q3}%</div>
-                    <div>{row.onTrackRate.Q4}%</div>
-                </div>
-                </div>            
+                    <div className='Demographic' key={row}><span>{row.title}</span></div>
+                    <div key={index + 'Q1'} data-value={row.onTrackRate.Q1}>{row.onTrackRate.Q1}%</div>
+                    <div key={index + 'Q2'} data-value={row.onTrackRate.Q2} className={ check(row.onTrackRate.Q1, row.onTrackRate.Q2) }>{row.onTrackRate.Q2}%</div>
+                    <div key={index + 'Q3'} data-value={row.onTrackRate.Q3} className={ check(row.onTrackRate.Q2, row.onTrackRate.Q3) }>{row.onTrackRate.Q3}%</div>
+                    <div key={index + 'Q4'} data-value={row.onTrackRate.Q4} className={ check(row.onTrackRate.Q3, row.onTrackRate.Q4) }>{row.onTrackRate.Q4}%</div>
+                </div>   
             )
         })
 
@@ -28,6 +26,19 @@ import JsonData from './data.json' // static file data
         }
         return obj;
     }
+
+    function check(previous, current){
+        if(current - previous <= -5){
+            return 'red';
+        }
+        else if(current - previous  >= 5){
+            return 'green';
+        }
+
+        return 'none'
+        
+    }
+
     // return our component to be rendered as html
     return(
         <div className='Grid-Container'>

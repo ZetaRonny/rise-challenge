@@ -28,7 +28,7 @@ state = {
       <div className="App">
         <div className='Container'>
         <div className='Container-Header'>
-          Reports
+          RISE: Grade 9
         </div>
         <div className='Center'>
           <Table data = {this.state.data}/>
@@ -36,7 +36,7 @@ state = {
         </div>
       </div>
     );
-  }
+  }  
 }
 
 export default App;
