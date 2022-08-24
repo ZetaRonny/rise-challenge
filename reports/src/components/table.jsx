@@ -52,7 +52,7 @@ function Table({data}){
     return(
         <div className='Grid-Container'>
             <div className='Grid-Header'>
-                <p>Title</p>
+                <p>Group</p>
                 <p>Q1</p>
                 <p>Q2</p>
                 <p>Q3</p>
