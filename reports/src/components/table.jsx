@@ -8,14 +8,17 @@ import JsonData from './data.json' // static file data
                 <div className='Grid-Data-Row'>
                     <div className='Demographic' key={row}><span>{row.title}</span></div>
                     <div key={index + 'Q1'} data-value={row.onTrackRate.Q1}>{row.onTrackRate.Q1}%</div>
-                    <div key={index + 'Q2'} data-value={row.onTrackRate.Q2} className={ check(row.onTrackRate.Q1, row.onTrackRate.Q2) }>{row.onTrackRate.Q2}%</div>
-                    <div key={index + 'Q3'} data-value={row.onTrackRate.Q3} className={ check(row.onTrackRate.Q2, row.onTrackRate.Q3) }>{row.onTrackRate.Q3}%</div>
-                    <div key={index + 'Q4'} data-value={row.onTrackRate.Q4} className={ check(row.onTrackRate.Q3, row.onTrackRate.Q4) }>{row.onTrackRate.Q4}%</div>
+                    <div key={index + 'Q2'} data-value={row.onTrackRate.Q2} className={ compareScores(row.onTrackRate.Q1, row.onTrackRate.Q2) }>{row.onTrackRate.Q2}%</div>
+                    <div key={index + 'Q3'} data-value={row.onTrackRate.Q3} className={ compareScores(row.onTrackRate.Q2, row.onTrackRate.Q3) }>{row.onTrackRate.Q3}%</div>
+                    <div key={index + 'Q4'} data-value={row.onTrackRate.Q4} className={ compareScores(row.onTrackRate.Q3, row.onTrackRate.Q4) }>{row.onTrackRate.Q4}%</div>
                 </div>   
             )
         })
 
-    //check if data is coming back as a string if so format it and add it to the array for the mapping of values 
+    /**
+     * @param {string} data           data from out api call.
+     * @return {object} obj           our newly formatted object for mapping  
+     */
     function cleanData(data){
         //first check is we have a string 
         const isString = typeof data === 'string' ; // type check
@@ -24,20 +27,26 @@ import JsonData from './data.json' // static file data
             let str = '[' + data + ']'; // the base string in the provided json was missing some elements in order to function as a proper json so i added them in 
             obj = JSON.parse(str);
         }
+
         return obj;
     }
-
-    function check(previous, current){
-        if(current - previous <= -5){
-            return 'red';
+    /**
+     * @param {integer} previous           previous scores.
+     * @param {integer} current            current scores.
+     * @return {string} color              the color associated with the score.
+     */
+    function compareScores(previous, current){
+        const color = 'black';
+        if(current - previous <= -5){  // drop in 5 percent
+            color = 'red';
         }
-        else if(current - previous  >= 5){
-            return 'green';
+        else if(current - previous  >= 5){ // increase in 5 percent
+            color = 'green';
         }
 
-        return 'none'
-        
+        return color;    
     }
+
 
     // return our component to be rendered as html
     return(
