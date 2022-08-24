@@ -5,13 +5,15 @@ import JsonData from './data.json' // static file data
     const table=rows.map(
         (row)=>{
             return(
+                <div className='Table-Wrapper'>
                 <div className='Grid-Data-Row'>
-                    <div>{row.title}</div>
-                    <div>{row.onTrackRate.Q1}</div>
-                    <div>{row.onTrackRate.Q2}</div>
-                    <div>{row.onTrackRate.Q3}</div>
-                    <div>{row.onTrackRate.Q4}</div>
+                    <div className='Demographic'>{row.title}</div>
+                    <div>{row.onTrackRate.Q1}%</div>
+                    <div>{row.onTrackRate.Q2}%</div>
+                    <div>{row.onTrackRate.Q3}%</div>
+                    <div>{row.onTrackRate.Q4}%</div>
                 </div>
+                </div>            
             )
         })
 
