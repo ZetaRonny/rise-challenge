@@ -31,6 +31,7 @@ font-weight: 600;
   width: 100%;
   color: #fff;
   font-size: 16pt;
+  margin-bottom: 2px;
   background-color: rgb(187, 187, 187);
   grid-template-columns: repeat(5,1fr);
 }
@@ -47,7 +48,7 @@ font-weight: 600;
   display: grid;
   max-width: inherit;
   grid-template-columns: repeat(5,1fr);
-  min-height: 20px;
+  min-height: 50px;
   padding: 1px;
 }
 
@@ -60,11 +61,11 @@ font-weight: 600;
 }
 
 .Grid-Data-Row:nth-child(even){
-  background-color: rgb(255, 218, 246);
+  background-color: rgb(255, 228, 254);
 }
 
 .Grid-Data-Row:nth-child(odd){
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(243, 242, 242);
 }
 
 .Grid-Data-Row:active{
@@ -80,7 +81,7 @@ font-weight: 600;
   margin: 0 auto; 
   max-width: 95%;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: rgb(243, 242, 242);
   filter: drop-shadow(0.5rem 0.5rem 0.55rem rgba(0, 0, 20, 0.61));
 }
 

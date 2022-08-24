@@ -1,16 +1,16 @@
 import React from 'react'
 import JsonData from './data.json' // static file data 
- function Table({data}){
+function Table({data}){
     let rows = cleanData(data.body);
     const table=rows.map(
         (row, index)=>{
             return(
                 <div className='Grid-Data-Row'>
                     <div className='Demographic' key={row}><span>{row.title}</span></div>
-                    <div key={index + 'Q1'} data-value={row.onTrackRate.Q1}>{row.onTrackRate.Q1}%</div>
-                    <div key={index + 'Q2'} data-value={row.onTrackRate.Q2} className={ compareScores(row.onTrackRate.Q1, row.onTrackRate.Q2) }>{row.onTrackRate.Q2}%</div>
-                    <div key={index + 'Q3'} data-value={row.onTrackRate.Q3} className={ compareScores(row.onTrackRate.Q2, row.onTrackRate.Q3) }>{row.onTrackRate.Q3}%</div>
-                    <div key={index + 'Q4'} data-value={row.onTrackRate.Q4} className={ compareScores(row.onTrackRate.Q3, row.onTrackRate.Q4) }>{row.onTrackRate.Q4}%</div>
+                    <div key={index} data-value={row.onTrackRate.Q1}>{row.onTrackRate.Q1}%</div>
+                    <div key={index} data-value={row.onTrackRate.Q2} className={ compareScores(row.onTrackRate.Q1, row.onTrackRate.Q2) }>{row.onTrackRate.Q2}%</div>
+                    <div key={index} data-value={row.onTrackRate.Q3} className={ compareScores(row.onTrackRate.Q2, row.onTrackRate.Q3) }>{row.onTrackRate.Q3}%</div>
+                    <div key={index} data-value={row.onTrackRate.Q4} className={ compareScores(row.onTrackRate.Q3, row.onTrackRate.Q4) }>{row.onTrackRate.Q4}%</div>
                 </div>   
             )
         })

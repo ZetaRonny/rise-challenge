@@ -33,6 +33,9 @@ state = {
         <div className='Center'>
           <Table data = {this.state.data}/>
         </div>
+        <div className='Center'>
+        
+        </div>
         </div>
       </div>
     );
