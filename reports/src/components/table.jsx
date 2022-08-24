@@ -17,7 +17,7 @@ import JsonData from './data.json' // static file data
 
     /**
      * @param {string} data           data from out api call.
-     * @return {object} obj           our newly formatted object for mapping  
+     * @return {array} obj            our newly formatted object for mapping  
      */
     function cleanData(data){
         //first check is we have a string 
@@ -36,11 +36,11 @@ import JsonData from './data.json' // static file data
      * @return {string} color              the color associated with the score.
      */
     function compareScores(previous, current){
-        const color = 'black';
-        if(current - previous <= -5){  // drop in 5 percent
+        let color = 'black';
+        if(current - previous <= -5){   //drop in 5 percent
             color = 'red';
         }
-        else if(current - previous  >= 5){ // increase in 5 percent
+        else if(current - previous  >= 5){  //increase in 5 percent
             color = 'green';
         }
 
