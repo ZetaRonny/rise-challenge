@@ -1,0 +1,7 @@
+[{"title": "Female", "onTrackRate": {"Q1": 79, "Q2": 74, "Q3": 75, "Q4": 78}},
+{"title": "Male", "onTrackRate": {"Q1": 82, "Q2": 78, "Q3": 77, "Q4": 78}},
+{"title": "White", "onTrackRate": {"Q1": 79, "Q2": 78, "Q3": 74, "Q4": 78}},
+{"title": "Black", "onTrackRate": {"Q1": 85, "Q2": 84, "Q3": 79, "Q4": 77}},
+{"title": "Latino", "onTrackRate": {"Q1": 77, "Q2": 72, "Q3": 69, "Q4": 74}},
+{"title": "Asian", "onTrackRate": {"Q1": 79, "Q2": 76, "Q3": 76, "Q4": 77}},
+{"title": "Total", "onTrackRate": {"Q1": 80, "Q2": 77, "Q3": 75, "Q4": 77}}]
