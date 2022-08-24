@@ -10,12 +10,15 @@
 }
 
 .Container-Header{
-height: 60px;
-background-color: #474747;
+height: 90px;
+background-color: rgb(84, 101, 160);
 color: #fff;
 font-size: 30pt;
-margin-bottom: 1%;
+margin-bottom: 2%;
 font-weight: 600;
+}
+.Container-Header-Title{
+  padding: 2%;
 }
 
 .Grid-Container{
@@ -32,7 +35,7 @@ font-weight: 600;
   color: #fff;
   font-size: 16pt;
   margin-bottom: 2px;
-  background-color: rgb(187, 187, 187);
+  background-color: rgb(96, 117, 187);
   grid-template-columns: repeat(5,1fr);
 }
 
@@ -53,32 +56,31 @@ font-weight: 600;
 }
 
 .red{
-  color: red;
+  color: rgb(150, 0, 0);
 }
 
 .green{
-  color: green;
+  color: rgb(0, 97, 0);
 }
 
 .Grid-Data-Row:nth-child(even){
-  background-color: rgb(255, 228, 254);
+  background-color: rgb(181, 197, 252);
 }
 
 .Grid-Data-Row:nth-child(odd){
-  background-color: rgb(243, 242, 242);
+  background-color: rgb(208, 218, 250);
 }
 
 .Grid-Data-Row:active{
-  background-color: rgb(163, 163, 163);
-  color:#fff;
+  background-color: rgb(231, 231, 231);
 }
 
 .Grid-Data-Row:hover{
-  background-color: rgb(163, 163, 163);
-  color:#fff;
+  background-color: rgb(231, 231, 231);
 }
 .Center{
   margin: 0 auto; 
+  margin-top: 3%;
   max-width: 95%;
   border-radius: 5px;
   background-color: rgb(243, 242, 242);

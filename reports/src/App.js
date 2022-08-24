@@ -28,7 +28,7 @@ state = {
       <div className="App">
         <div className='Container'>
         <div className='Container-Header'>
-          RISE: Grade 9
+          <div className='Container-Header-Title'>RISE: Grade 9</div>
         </div>
         <div className='Center'>
           <Table data = {this.state.data}/>
