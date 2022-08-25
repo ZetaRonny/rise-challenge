@@ -10,7 +10,7 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 // our get request to an outbound source in this case an aws api gateway that returns our json values
 app.get('/reports', (req, res) => { 
     //our http GET request
-    axios.get(`https://93kv7gzta7.execute-api.us-east-2.amazonaws.com/dev`) // public api can be viewed in postman as well
+    axios.get(`https://93kv7gzta7.execute-api.us-east-2.amazonaws.com/dev`) // public api can be viewed in postman or browser as well
     .then(function (response) {
         //making computer readable during send
         res.send(JSON.stringify(response.data));
