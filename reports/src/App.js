@@ -4,7 +4,7 @@ import Table from './components/table'; //our custom component
 
 class App extends Component {
 state = {
-    data: []
+    data: [] // initial state
   };
 
   componentDidMount() {

@@ -1,5 +1,5 @@
 import React from 'react'
-import JsonData from './data.json' // static file data 
+//import JsonData from './data.json' // static file data 
 function Table({data}){
     let rows = cleanData(data.body);
     const table=rows.map(
@@ -7,7 +7,7 @@ function Table({data}){
             return(
                 <div className='Grid-Data-Row'>
                     <div className='Demographic' key={row}><span>{row.title}</span></div>
-                    <div key={index} data-value={row.onTrackRate.Q1}>{row.onTrackRate.Q1}%</div>
+                    <div key={index} data-value={row.onTrackRate.Q1}>{row.onTrackRate.Q1}%</div> 
                     <div key={index} data-value={row.onTrackRate.Q2} className={ compareScores(row.onTrackRate.Q1, row.onTrackRate.Q2) }>{row.onTrackRate.Q2}%</div>
                     <div key={index} data-value={row.onTrackRate.Q3} className={ compareScores(row.onTrackRate.Q2, row.onTrackRate.Q3) }>{row.onTrackRate.Q3}%</div>
                     <div key={index} data-value={row.onTrackRate.Q4} className={ compareScores(row.onTrackRate.Q3, row.onTrackRate.Q4) }>{row.onTrackRate.Q4}%</div>
@@ -23,7 +23,7 @@ function Table({data}){
         //first check is we have a string 
         const isString = typeof data === 'string' ; // type check
         let obj = [];
-        if(isString == true){
+        if(isString === true){
             let str = '[' + data + ']'; // the base string in the provided json was missing some elements in order to function as a proper json so i added them in 
             obj = JSON.parse(str);
         }
@@ -46,7 +46,6 @@ function Table({data}){
 
         return color;    
     }
-
 
     // return our component to be rendered as html
     return(
